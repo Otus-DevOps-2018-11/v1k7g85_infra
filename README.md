@@ -41,4 +41,4 @@ gcloud firewall-rules create default-puma-server --allow tcp:9292 --target-tags 
 testapp_IP = 35.246.225.173
 testapp_port = 9292
 
-
+Добавлен файл ubuntu.json c параметрами для создания шаблона ВМ, а так же пример файла с переменными.
