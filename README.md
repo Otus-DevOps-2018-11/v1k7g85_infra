@@ -27,3 +27,18 @@ ssh someinternalhost
 
 bastion_IP = 35.207.78.88
 someinternalhost_IP = 10.156.0.3
+
+Команда для создания инстанса:
+
+gcloud compute instances create reddit-app --boot-disk-size=10GB --image-family ubuntu-1604-lts --image-project=ubuntu-os-cloud --machine-type=g1-small --tags puma-server --restart-on-failure --zone europe-west3-a --metadata-from-file startup-script=startup.sh
+
+Команда для создания правила firewall:
+
+gcloud firewall-rules create default-puma-server --allow tcp:9292 --target-tags = puma-server
+
+Данные для подключения:
+
+testapp_IP = 35.246.225.173
+testapp_port = 9292
+
+
