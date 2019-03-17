@@ -7,7 +7,7 @@
             "image_family": "reddit-app-base",
             "source_image_family": "{{ user `source_image_family` }}",
             "zone": "europe-west1-b",
-            "ssh_username": "vp.ilichev",
+            "ssh_username": "appuser",
             "machine_type": "{{ user `machine_type` }}",
 	    "image_description": "This image was created by packer",
 	    "disk_size": 10,
@@ -18,9 +18,8 @@
     ],
     "provisioners": [
         {
-            "type": "shell",
-            "script": "scripts/install_ruby.sh",
-            "execute_command": "sudo {{.Path}}"
+            "type": "ansible",
+            "playbook_file": "ansible/packer_app.yml"
         }
      ]
 }
